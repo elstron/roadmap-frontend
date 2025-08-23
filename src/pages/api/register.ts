@@ -6,6 +6,6 @@ const userRepository = new createUserService(new UserRepository());
 const userController = new UserController(userRepository);
 
 const env = import.meta.env;
-
+console.log(env.JWT_SECRET);
 export const GET: APIRoute = (context: AstroSharedContext) => userController.getUserById(context);
 export const POST: APIRoute = (context: AstroSharedContext) =>  userController.register(context, env);
