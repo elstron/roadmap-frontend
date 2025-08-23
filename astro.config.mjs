@@ -10,4 +10,9 @@ export default defineConfig({
     imageService: "compile"
   }),
   output: 'server',
+  vite: {
+    define: {
+      "process.env": process.env
+    }
+  }
 });
