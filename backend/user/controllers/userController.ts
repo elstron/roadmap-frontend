@@ -29,7 +29,7 @@ export class UserController {
         email,
         password,
       };
-
+      console.log(env.RESEND_API_KEY);
       const {token, ...rest}  = await this.service.execute(userData, env);
       const resend = new Resend(env.RESEND_API_KEY);
     
