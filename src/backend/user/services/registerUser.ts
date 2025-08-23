@@ -32,7 +32,7 @@ export class createUserService {
 
     await this.repository.create(userToCreate);
 
-    const secret = new TextEncoder().encode(env.JWT_SECRET);
+    const secret = new TextEncoder().encode(import.meta.env.JWT_SECRET);
     const token  = await new SignJWT({
         username: user.username,
         email: user.email,
